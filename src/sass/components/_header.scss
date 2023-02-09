@@ -3,6 +3,9 @@
     background-size: cover;
     height: 176px;
     padding-top: 40px;
+    @media screen and(max-width: 320px) {
+        height: 190px;
+    }
 }
 .header__nav{
     display: flex;
@@ -16,6 +19,11 @@
     @include fonts(normal, 500, 30px, 1.16);
     color: #ffffff;
 }
+.header__logo-text{
+    @media screen and(max-width: 320px) {
+        display: none;
+    }
+}
 .header__icon {
     margin-right: 10px;
 }
@@ -23,9 +31,10 @@
     display: flex;
 }
 .header__item {
+    position: relative;
 }
 .header__item:not(:last-child){
-    margin-right: 39px;
+    margin-right: 40px;
 }
 .header__link {
     color: #ffffff;
@@ -37,18 +46,58 @@
     
 }
 .header__form {
+    position: relative;
     display: flex;
+    align-items: center;
     justify-content: center;
+    width: 394px;
+    margin: 0 auto;
+    @media screen and(max-width: 767.99px) {
+        width: 336px;
+    }
+    @media screen and(max-width: 320px) {
+        width: 280px;
+    }
 }
 .header__input {
-    width: 394px;
+    display: block;
+    width: 100%;
     height: 20px;
+    border: none;
+    color: #ffffff;
+    outline: rgba(0,0,0,0);
+    border-bottom: 0.5px solid #fff;
+    background-color: transparent;
+    @media screen and(max-width: 767.99px) {
+        width: 336px;
+    }
+}
+.header__input::placeholder{
+    color: #ffffff;
+    opacity: .6;
+    @include fonts(normal, 400, 14px, 1.14);
+}
+.header__search-btn {
+    position: absolute;
+    cursor: pointer;
+    right: 0;
+    bottom: 6px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: transparent;
 }
 .header__icon-btn{
     color: #ffffff;
 }
-.header__search-btn {
-    border: none;
-    background-color: transparent;
+ .current::after {
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    content: '';
+    width: 100%;
+    height: 3px;
+    background: #FF001B;
+    display: block;
 }
